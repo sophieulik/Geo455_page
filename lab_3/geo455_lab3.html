@@ -2,9 +2,130 @@
 <html>
     <head>
        <title>geo455_lab3</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: "whitesmoke";
+                font-family: "Noto Sans", sans-serif;
+                color: #3d3d3d;
+            }
+            #title {
+                position: relative;
+                margin-top: 5;
+                margin-left: 5px;
+                margin-right: 5px;
+                text-align: center;
+                top: 0px;
+                left: 75px;
+                right: 50px;
+                width: 85%;
+                font-size: 2em;
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: rgba(255, 255, 255, 0.95);
+                border: 1px solid grey;
+                border-radius: 5px;
+                z-index: 800;
+            }
+            #h2 {
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+            }
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+            #description {
+                position: static;
+                margin-left: 5px;
+                margin-right: 5px;
+                float: left;
+                bottom: 10px;
+                left: 50x;
+                top: 100px;
+                width: 265px;
+                height: auto;
+                padding: 0px 15px;
+                background-color: rgba(255, 255, 255, 0.95);
+                border: 1px solid grey;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #description p {
+                font-size: .95em;
+                line-height: 1.5em;
+            }
+            #footer p {
+                font-size: 15px;
+                text-align: center;
+                padding: 0px 5px;
+                border: 5px;
+                
+            }
+            
+            #footer {
+                position: fixed;
+                clear: both;
+                bottom: 10px;
+                width: auto;
+                margin-top: 5;
+                margin-left: 5px;
+                margin-right: 10px;
+                height: auto;
+                left: 4px;
+                font-size: 2em;
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: rgba(255, 255, 255, 0.95);
+                border: 1px solid grey;
+                border-radius: 10px;
+                z-index: 800;
+            }
+            #img {
+                margin-left: auto;
+                left: 5px;
+            }
+            
+            #map {
+                z-index: -800;
+                width: 100%;
+            }
+            
+        </style>
     </head>
-         <body bgcolor="#EDDD9E">
-       <h1 align="center">Lab 3</h1>
-       
-     </body>
+    <body>
+        <div id="container">
+            <h1 id="title">Lab 3: Summer Trip 2021</h1>
+        <div id="description">
+            <p>In summer 2021, I went to Washington State and was able to hike and visit beautiful natural areas. Here are the places I went in chronological order: </p>
+             <ol type="1">
+            <li>Seattle  </li>
+            <li>Mt. Rainier National Park </li>
+            <li>Mt. St. Helens</li>
+            <li>Ruby Beach</li>   
+            <li>Lake Crescent</li>
+            <li>Hurricane Ridge</li>
+            <li>Mt. Ellinor</li>
+            <li>Diablo Lake</li>
+            <li>Cascade Pass</li>
+            <li>Blanca Lake</li>
+            </ol>
+        
+           <div id="img"><img src="Mt_Rainier.jpg" style="width: 265px">
+           <p>Photo Credits: Sophie Ulik (2021)</p>
+            </div>
+          <div id="map"></div>
+            <script src="map_lab3.js"></script>
+          <div id="footer"><p>Map developed by Sophie Ulik</p></div>
+    </body>
 </html>
