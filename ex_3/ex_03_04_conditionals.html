@@ -20,14 +20,14 @@
         }
         document.getElementById("good_day").innerHTML = greeting;
         
-        if (hour < 16) {// change the hour values based on the current time.
+        if (hour < 15) {// change the hour values based on the current time.
             greeting = "Good day!";
         } else {
             greeting = "Good evening!";
         }
         document.getElementById("good_eve").innerHTML = greeting;
         
-        if (hour < 12) {
+        if (hour < 10) {
             greeting = "Good Morning!";
         } else if (hour <18){
             greeting = "Good Afternoon!";
