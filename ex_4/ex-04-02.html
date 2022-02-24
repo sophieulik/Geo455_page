@@ -28,5 +28,34 @@
 
         </script>
     </body>
+    <br>
+        <head>
+        <title>Earth images</title>
+    </head>
+    <body>
+        <h2>Cartoon vs. Real Earth</h2>
+        <img id="myImage2" src="images/Earth_icon_222.png"><br>
+        <input type="button" value="Cartoon Earth" id="cartoon">
+        <input type="button" value="Real Earth" id="real">
+        <script>
+            function showcartoon() {
+                document
+                    .getElementById("myImage2")
+                    .src = "images/Earth_icon_222.png";
+            }
+            function showreal() {
+                document
+                    .getElementById("myImage2")
+                    .src = "images/earthicon333.png";
+            }
+            document
+                .getElementById("cartoon")
+                .addEventListener("click", showcartoon);
+            document
+                .getElementById("real")
+                .addEventListener("click", showreal);
+
+        </script>
+    </body>
 </html>
 

@@ -5,7 +5,12 @@
     </head>
     <body>
         <p id="position"></p>
+    <button id="myBtn1">Click me!!</button>
+    <p id="demo1"></p>
+    
         <script>
+            document.getElementById("myBtn1").addEventListener("click", function(){ alert("Hello World!"); });
+            
             var page_coord = document.getElementById("position");
             document.addEventListener("mousemove", function(e) {
                 page_coord.innerHTML = e.pageX + " " + e.pageY;

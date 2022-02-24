@@ -18,4 +18,22 @@
             document.getElementById("species").innerHTML = html;
         </script>
     </body>
+    <br>
+    <body>
+        <p>This is my example list of different states in the USA.</p>
+    
+        <ol id="states"></ol>
+    
+        <script>
+            var data = ["Wisconsin", "Minnesota", "California", "Arizona", "Alaska", "South Dakota"];
+            var html = "";
+            data.forEach(function(element) {
+                html += "<li><i>" + element + "</i></li>";
+            });
+            document.getElementById("states").innerHTML = html;
+        </script>
+    
+    
+    
+    </body>
 </html>
