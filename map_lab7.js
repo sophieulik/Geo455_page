@@ -21,7 +21,7 @@ var myIcon = new L.Icon({
      iconSize: [20, 20],
      iconAnchor: [10, 15],
      popupAnchor:  [1, -24],
-     iconUrl: 'peaks.png'
+     iconUrl: 'images/peaks.png'
  });
 
 
