@@ -18,7 +18,7 @@ var satellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
     id: 'mapbox/satellite-v9',
     tileSize: 512,
     zoomOffset: -1
-}).addTo(mymap);
+});
 
 
 var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2NoYXVkaHVyaSIsImEiOiJjazBtcG5odG8wMDltM2JtcjdnYTgyanBnIn0.qwqjMomdrBMG36GQKXBlMw', {
@@ -27,11 +27,6 @@ var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
     id: 'mapbox/light-v9',
     tileSize: 512,
     zoomOffset: -1
-}).addTo(mymap);
-
-
-var topo = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
-    layers: 'SRTM30-Colored-Hillshade'
 });
 
 
@@ -136,11 +131,40 @@ L.marker(coords[8], {icon: myIcon1}).bindPopup(indianaPopup, customOptions).addT
 loc.addTo(mymap);
 
 
-//propcircles
+
 
 
 //boundaries
+function getRadius(area) {
+  var radius = Math.sqrt(area/Math.PI);
+  return radius *0.013;
+}
 
+var propcircles = new L.geoJson(propcircles, {
+    onEachFeature: function(feature, featureLayer){
+        featureLayer.bindPopup('<p>Name: <b>'+feature.properties.name+'</b></br>' +
+			       'Number of Visitors: '+feature.properties.visitors+'</p>');
+    },
+    pointToLayer: function(feature, latlng) {
+      return L.circleMarker(latlng, {
+          fillColor: "#920101", 
+          color: '#920101',
+          weight: 1,       
+          radius: getRadius(feature.properties.visitors),
+          fillOpacity: .35
+      }).on({
+            mouseover: function(e) {
+                this.openPopup();
+                this.setStyle({fillOpacity: .8, fillColor: '#2D8F4E'});
+
+            },
+            mouseout: function(e) {
+                this.closePopup();
+                this.setStyle({fillOpacity: .35, fillColor: '#920101'});  
+            }
+    });
+  }
+});
 
 // Add a scalebar 
 L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addTo(mymap);
@@ -150,13 +174,15 @@ L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addT
 var baseLayers = {
     'Grayscale': grayscale,
     'Outdoors': outdoors,
-    'Hillshade': topo,
     'Satellite': satellite,
 	};
 
 
 var overlays = {
     'National Parks': loc,
+    'Visitors': propcircles,
+    'Boundaries': boundary,
+
 
 };
 
@@ -172,7 +198,7 @@ var miniMap = new L.Control.MiniMap(L.tileLayer('https://api.maptiler.com/maps/t
 
 //Pop-up for showing XY coordinates on map
 //// Create an empty popup
-var popup = L.popup();
+
             
 //// Function to set popup contents
 function onMapClick(e) {
@@ -183,6 +209,10 @@ function onMapClick(e) {
         "<b>long:</b> " + e.latlng.lng + "<br>" + 
         "<b>lat:</b> " + e.latlng.lat
     ).openOn(mymap);}
+
+//boundary
+var boundary = L.geoJSON(boundary).addTo(mymap);
+
 
 //// Add event listener for click events to show lat long on the map
 mymap.addEventListener("click", onMapClick);
