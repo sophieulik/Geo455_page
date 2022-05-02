@@ -107,8 +107,8 @@ var customOptions ={'maxWidth': '150','className' : 'custom'};
 coords = [
     [35.634353512844655, -83.55740154526205],
     [37.3105412877557, -113.02607600704096],
-    [44.47281006556642, -110.59655353621427],
-    [36.155436392854696, -112.12913951204548],
+    [44.58833724550095, -110.5938352757673],
+    [36.33978538040136, -112.82723916698846],
     [40.35692622582843, -105.68129229058606],
     [44.34367173110419, -68.27346551760803],
     [43.80531366190578, -110.67932888833144],
@@ -221,31 +221,31 @@ function onMapClick(e) {
 mymap.addEventListener("click", onMapClick);
 
 // Add Navigation Buttons
-L.easyButton(('1 height=50%'), function(btn, map){
+L.easyButton(('#1 height=50%'), function(btn, map){
     map.setView(coords[0], 10);
 }).addTo(mymap);
-L.easyButton(('2 height=50%'), function(btn, map){
+L.easyButton(('#2 height=50%'), function(btn, map){
     map.setView(coords[1], 11);
 }).addTo(mymap);
-L.easyButton(('3 height=50%'), function(btn, map){
-    map.setView(coords[2], 10);
+L.easyButton(('#3 height=50%'), function(btn, map){
+    map.setView(coords[2], 9);
 }).addTo(mymap);
-L.easyButton(('4 height=50%'), function(btn, map){
+L.easyButton(('#4 height=50%'), function(btn, map){
     map.setView(coords[3], 9);
 }).addTo(mymap);
-L.easyButton(('5 height=50%'), function(btn, map){
+L.easyButton(('#5 height=50%'), function(btn, map){
     map.setView(coords[4], 10);
 }).addTo(mymap);
-L.easyButton(('6 height=50%'), function(btn, map){
+L.easyButton(('#6 height=50%'), function(btn, map){
     map.setView(coords[5], 11);
 }).addTo(mymap);
-L.easyButton(('7 height=50%'), function(btn, map){
-    map.setView(coords[6], 11);
+L.easyButton(('#7 height=50%'), function(btn, map){
+    map.setView(coords[6], 10);
 }).addTo(mymap);
-L.easyButton(('8 height=50%'), function(btn, map){
-    map.setView(coords[7], 10);
+L.easyButton(('#8 height=50%'), function(btn, map){
+    map.setView(coords[7], 9);
 }).addTo(mymap);
-L.easyButton(('9 height=50%'), function(btn, map){
+L.easyButton(('#9 height=50%'), function(btn, map){
     map.setView(coords[8], 11);
 }).addTo(mymap);
 L.easyButton(('<img src="images/USA.svg", height=55%>'), function(btn, map){
