@@ -134,7 +134,8 @@ loc.addTo(mymap);
 
 
 
-//boundaries
+
+//propcircles
 function getRadius(area) {
   var radius = Math.sqrt(area/Math.PI);
   return radius *0.013;
@@ -170,6 +171,10 @@ var propcircles = new L.geoJson(propcircles, {
 L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addTo(mymap);
 
 
+//boundary
+var bound = L.geoJSON(bound);
+
+
 // Create menu items
 var baseLayers = {
     'Grayscale': grayscale,
@@ -181,7 +186,7 @@ var baseLayers = {
 var overlays = {
     'National Parks': loc,
     'Visitors': propcircles,
-
+    'Boundaries': bound,
 
 };
 
@@ -209,16 +214,7 @@ function onMapClick(e) {
         "<b>lat:</b> " + e.latlng.lat
     ).openOn(mymap);}
 
-//boundary
-var acadia = L.geoJSON(acadia).addTo(mymap);
-var indiana = L.geoJSON(indiana).addTo(mymap);
-var greatsmoky = L.geoJSON(greatsmoky).addTo(mymap);
-var rocky = L.geoJSON(rocky).addTo(mymap);
-var yellow = L.geoJSON(yellow).addTo(mymap);
-var grand = L.geoJSON(grand).addTo(mymap);
-var grandc = L.geoJSON(grandc).addTo(mymap);
-var zion = L.geoJSON(zion).addTo(mymap);
-var yosemite = L.geoJSON(yosemite).addTo(mymap);
+
 
 
 //// Add event listener for click events to show lat long on the map
@@ -226,31 +222,31 @@ mymap.addEventListener("click", onMapClick);
 
 // Add Navigation Buttons
 L.easyButton(('1 height=50%'), function(btn, map){
-    map.setView(coords[0], 13);
+    map.setView(coords[0], 10);
 }).addTo(mymap);
 L.easyButton(('2 height=50%'), function(btn, map){
-    map.setView(coords[1], 13);
+    map.setView(coords[1], 11);
 }).addTo(mymap);
 L.easyButton(('3 height=50%'), function(btn, map){
-    map.setView(coords[2], 13);
+    map.setView(coords[2], 10);
 }).addTo(mymap);
 L.easyButton(('4 height=50%'), function(btn, map){
-    map.setView(coords[3], 13);
+    map.setView(coords[3], 9);
 }).addTo(mymap);
 L.easyButton(('5 height=50%'), function(btn, map){
-    map.setView(coords[4], 13);
+    map.setView(coords[4], 10);
 }).addTo(mymap);
 L.easyButton(('6 height=50%'), function(btn, map){
-    map.setView(coords[5], 13);
+    map.setView(coords[5], 11);
 }).addTo(mymap);
 L.easyButton(('7 height=50%'), function(btn, map){
-    map.setView(coords[6], 13);
+    map.setView(coords[6], 11);
 }).addTo(mymap);
 L.easyButton(('8 height=50%'), function(btn, map){
-    map.setView(coords[7], 13);
+    map.setView(coords[7], 10);
 }).addTo(mymap);
 L.easyButton(('9 height=50%'), function(btn, map){
-    map.setView(coords[8], 13);
+    map.setView(coords[8], 11);
 }).addTo(mymap);
 L.easyButton(('<img src="images/USA.svg", height=55%>'), function(btn, map){
     map.setView([40.433754350687515, -99.77635567694074], 4);
