@@ -40,45 +40,12 @@ var myIcon1 = L.icon({
 
 var myIcon2 = L.icon({
     iconUrl: 'images/icon_2.png',
-    iconSize: [30, 30],
+    iconSize: [15, 15],
     iconAnchor: [0, 0],
     popupAnchor: [15,10],
 });
 
-var myIcon3 = L.icon({
-    iconUrl: 'images/icon_3.png',
-    iconSize: [30, 30],
-    iconAnchor: [0, 0],
-    popupAnchor: [15,10],
-});
 
-var myIcon4 = L.icon({
-    iconUrl: 'images/icon_4.png',
-    iconSize: [30, 30],
-    iconAnchor: [0, 0],
-    popupAnchor: [15,10],
-});
-
-var myIcon5 = L.icon({
-    iconUrl: 'images/icon_5.png',
-    iconSize: [30, 30],
-    iconAnchor: [0, 0],
-    popupAnchor: [15,10],
-});
-
-var myIcon6 = L.icon({
-    iconUrl: 'images/icon_6.png',
-    iconSize: [30, 30],
-    iconAnchor: [0, 0],
-    popupAnchor: [15,10],
-});
-
-var myIcon7 = L.icon({
-    iconUrl: 'images/icon_7.png',
-    iconSize: [30, 30],
-    iconAnchor: [0, 0],
-    popupAnchor: [15,10],
-});
 
 // Create custom popups with images
 var greatsmokyPopup = "<a href='https://www.nps.gov/grsm/index.htm' target='_blank'>Great Smoky Mountain National Park <br/><img src='images/greatSM.jpg' width='150px'/>";
@@ -98,6 +65,26 @@ var grandtetonPopup = "<a href='https://www.nps.gov/grte/index.htm' target='_bla
 var yosemitePopup = "<a href='https://www.nps.gov/yose/index.htm' target='_blank'>Yosemite National Park <br/><img src='images/yosemite.jpg' width='150px'/>";
 
 var indianaPopup = "<a href='https://www.nps.gov/indu/index.htm' target='_blank'>Indiana Dunes National Park <br/><img src='images/indiana.jpg' width='150px'/>";
+
+
+// Create custom popups with images part 2
+var greatsmokyPopup2 = "<a href='https://www.alltrails.com/trail/us/tennessee/alum-cave-trail-to-mount-leconte' target='_blank'>Alum Cave Trail to Mount LeConte </a> <br> 11.0 mi <br> 3,061 ft elevation gain <br> rated: hard <img src='images/alum_cave.jpg' width='150px'/>";
+
+var zionPopup2 = "<a href='https://www.alltrails.com/trail/us/utah/angels-landing-trail' target='_blank'>Angels Landing Trail </a> <br> 4.4 mi <br> 1,604 ft elevation gain <br> rated: hard <br/><img src='images/angels_landing.jpg' width='150px'/>";
+
+var yellowstonePopup2 = "<a href='https://www.alltrails.com/trail/us/wyoming/grand-prismatic-hot-spring' target='_blank'>Grand Prismatic Hot Springs </a> <br> 1.5 mi <br> 200 ft elevation gain <br> rated: easy <img src='images/hot_springs.jpg' width='150px'/>";
+
+var grandcanyonPopup2 = "<a href='https://www.alltrails.com/trail/us/arizona/south-kaibab-trail' target='_blank'>South Kaibab Trail to Cedar Ridge </a> <br> 2.8 mi <br> 1,102 ft elevation gain <br> rated: moderate <img src='images/south_kaibab.jpg', width='150px'/>";
+
+var rockymtPopup2 = "<a href='https://www.alltrails.com/trail/us/colorado/emerald-lake-trail' target='_blank'>Emerald Lake Trail </a> <br> 3.2 mi <br> 698 ft elevation <br> rated: moderate <img src='images/emerald_lake.jpg' width='150px'/>";
+
+var acadiaPopup2 = "<a href='https://www.alltrails.com/trail/us/maine/the-beehive-loop-trail' target='_blank'>The Beehive Loop Trail </a><br> 1.5 mi <br> 508 ft elevation gain <br> rated: hard <img src='images/beehive_loop.jpg' width='150px'/>";
+
+var grandtetonPopup2 = "<a href='https://www.alltrails.com/trail/us/wyoming/cascade-canyon-trail' target='_blank'>Cascade Canyon Trail </a> <br> 9.1 mi <br> 1,102 ft elevation gain <br> rated: moderate <img src='images/cascade_canyon.jpg' width='150px'/>";
+
+var yosemitePopup2 = "<a href='https://www.alltrails.com/trail/us/california/vernal-and-nevada-falls-via-the-mist-trail' target='_blank'>Vernal and Nevada Falls via Mist Trail </a> <br> 6.0 mi <br> 2,162 ft elevation gain <br> rated: hard <img src='images/vernal_nevada.jpg' width='150px'/>";
+
+var indianaPopup2 = "<a href='https://www.alltrails.com/trail/us/indiana/cowles-bog-trail--4' target='_blank'>Cowles Bog Trail </a> <br> 4.3 mi <br> 216 ft elevation gain <br> rated: moderate <img src='images/cowles_bog.jpg' width='150px'/>";
 
 
 var customOptions ={'maxWidth': '150','className' : 'custom'};
@@ -131,8 +118,29 @@ L.marker(coords[8], {icon: myIcon1}).bindPopup(indianaPopup, customOptions).addT
 loc.addTo(mymap);
 
 
+coords2 = [
+    [35.62955274451139, -83.45149397850035],
+    [37.259247419635464, -112.95139700174332],
+    [44.5154563373353, -110.8325108885765],
+    [36.05299366985901, -112.08362460136414],
+    [40.31195717723627, -105.64565777778624],
+    [44.331538349719, -68.18519443273544],
+    [43.76719045715556, -110.74421592056751],
+    [37.732778859926555, -119.55781996250151],
+    [41.644958166425006, -87.0867696404457]
+];
 
-
+// Marker Layergroup
+var loc2 = L.layerGroup();
+L.marker(coords2[0], {icon: myIcon2}).bindPopup(greatsmokyPopup2, customOptions).addTo(loc2);
+L.marker(coords2[1], {icon: myIcon2}).bindPopup(zionPopup2, customOptions).addTo(loc2);
+L.marker(coords2[2], {icon: myIcon2}).bindPopup(yellowstonePopup2, customOptions).addTo(loc2);
+L.marker(coords2[3], {icon: myIcon2}).bindPopup(grandcanyonPopup2, customOptions).addTo(loc2);
+L.marker(coords2[4], {icon: myIcon2}).bindPopup(rockymtPopup2, customOptions).addTo(loc2);
+L.marker(coords2[5], {icon: myIcon2}).bindPopup(acadiaPopup2, customOptions).addTo(loc2);
+L.marker(coords2[6], {icon: myIcon2}).bindPopup(grandtetonPopup2, customOptions).addTo(loc2);
+L.marker(coords2[7], {icon: myIcon2}).bindPopup(yosemitePopup2, customOptions).addTo(loc2);
+L.marker(coords2[8], {icon: myIcon2}).bindPopup(indianaPopup2, customOptions).addTo(loc2);
 
 
 //propcircles
@@ -165,7 +173,7 @@ var propcircles = new L.geoJson(propcircles, {
             }
     });
   }
-});
+}).addTo(mymap);
 
 // Add a scalebar 
 L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addTo(mymap);
@@ -173,6 +181,10 @@ L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addT
 
 //boundary
 var bound = L.geoJSON(bound);
+
+//trails
+var trails = L.geoJSON(trails);
+
 
 
 // Create menu items
@@ -185,6 +197,8 @@ var baseLayers = {
 
 var overlays = {
     'National Parks': loc,
+    'Most Popular Trails': trails,
+    'Trailheads': loc2,
     'Visitors': propcircles,
     'Boundaries': bound,
 
