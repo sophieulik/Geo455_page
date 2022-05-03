@@ -39,7 +39,7 @@ var myIcon1 = L.icon({
 });
 
 var myIcon2 = L.icon({
-    iconUrl: 'images/icon_2.png',
+    iconUrl: 'images/icon.png',
     iconSize: [15, 15],
     iconAnchor: [0, 0],
     popupAnchor: [15,10],
