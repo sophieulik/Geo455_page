@@ -183,7 +183,7 @@ L.control.scale({position: 'bottomright', maxWidth: '150', metric: 'True'}).addT
 var bound = L.geoJSON(bound);
 
 //trails
-var trails = L.geoJSON(trails);
+var trails = L.geoJSON(trails).addTo(loc2);
 
 
 
@@ -197,8 +197,7 @@ var baseLayers = {
 
 var overlays = {
     'National Parks': loc,
-    'Most Popular Trails': trails,
-    'Trailheads': loc2,
+    'Most Popular Trails': loc2,
     'Visitors': propcircles,
     'Boundaries': bound,
 
